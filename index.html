@@ -11,38 +11,8 @@
         <div id="chart"></div>
         <script>
             var myTree = tree().height(500).width(960);
-            d3.text('data.tsv', function (error, text) {
+            d3.json('./data/NTNGAGR.json', function (error, root) {
                 if (error) throw error;
-                var table = [{
-                    name: 'detected',
-                    parent: null
-                }];
-                var genes = [];
-                var drugs = [];
-                d3.tsvParseRows(text, function (d, i) {
-                    if (d[0].startsWith('#')) return;
-
-                    if (!genes.find(function (element) { return element === d[5]; })) {
-                        table.push({
-                            name: d[5],
-                            parent: d[6]
-                        });
-                        genes.push(d[5]);
-                    }
-
-                    if (!drugs.find(function (element) { return element === d[6]; })) {
-                        table.push({
-                            name: d[6],
-                            parent: "detected"
-                        });
-                        drugs.push(d[6]);
-                    }
-                });
-
-                var root = d3.stratify()
-                    .id(function (d) { return d.name; })
-                    .parentId(function (d) { return d.parent; })
-                    (table);
 
                 myTree.data(root);
 
