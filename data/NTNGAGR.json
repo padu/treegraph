@@ -1,0 +1,1035 @@
+{
+  "module": "MODULE_NAME",
+  "formNm": "QFC",
+  "scheduleNm": "NA",
+  "projectid": 0,
+  "procNm": "REGINSIGHT_CONSUMPTION",
+  "subProcNm": "CLEMS_LGL_ENTY",
+  "source": "ETL",
+  "description": "STD_CLEMS_LGL_ENTY",
+  "formVersion": 1,
+  "legalEntity": "Citigroup",
+  "createdBy": "RRAI",
+  "name":  "MODULE_NAME",
+  "id": "MODULE_NAME",
+  "parent": "null",
+  "children": [
+    {
+      "module": "MODULE_NAME",
+      "stgNm": "DATA_SOURCE",
+      "stgSeq": 0,
+      "stgDesc": "Read Data From Data Source",
+      "name": "DATA_SOURCE",
+      "id": "DATA_SOURCE",
+      "parent": "MODULE_NAME",
+      "children": [{
+          "module": "MODULE_NAME",
+          "stgNm": "DATA_SOURCE",
+          "taskNm": "FILE_READ",
+          "taskDesc": "Read Data From Data Source",
+          "taskSeq": 1,
+          "taskType": "READ",
+          "name": "FILE_READ",
+          "id": "FILE_READ",
+          "parent": "DATA_SOURCE",
+          "children": [
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "DATA_SOURCE",
+              "tskNm": "FILE_READ",
+              "paramNm": "in_data",
+              "paramVal": "DSET.IN_MODULE_NAME",
+              "name": "in_data",
+              "id": "in_data",
+              "parent": "FILE_READ",
+              "derivedParams": {
+                "dsetNm": "DSET.IN_MODULE_NAME",
+                "source": "File",
+                "dsetDesc": "Read data from dat file and load it to Dataset",
+                "dsetFsType": "Local",
+                "dsetLoc": "/var/app/gftseap2/REG_DEV_1/sk34869/QFC/modified/STD_QFC_CITIRSK_NTNGAGR_D_20190813_20190814005802_61186488_CO.dat",
+                "dsetFnPattern": "STD_QFC_CITIRSK_NTNGAGR_D_*_CO.dat",
+                "dsetCpressFlg": "N",
+                "headerFlg": "Y",
+                "fileDelimit": "|",
+                "fileType": "Delimited",
+                "columns": [
+                  {
+                    "colName": "COB_DT",
+                    "dataType": "String",
+                    "colSeq": "1"
+                  },
+                  {
+                    "colName": "NETG_AGR_ID",
+                    "dataType": "STRING",
+                    "colSeq": "2"
+                  },
+                  {
+                    "colName": "CITI_GFCID",
+                    "dataType": "STRING",
+                    "colSeq": "3"
+                  },
+                  {
+                    "colName": "CITI_LE_ID",
+                    "dataType": "STRING",
+                    "colSeq": "4"
+                  },
+                  {
+                    "colName": "CUST_GFCID",
+                    "dataType": "STRING",
+                    "colSeq": "5"
+                  },
+                  {
+                    "colName": "CUST_LE_ID",
+                    "dataType": "STRING",
+                    "colSeq": "6"
+                  },
+                  {
+                    "colName": "SCR_AGR_TYP_NM",
+                    "dataType": "STRING",
+                    "colSeq": "7"
+                  },
+                  {
+                    "colName": "SCR_AGR_DESC",
+                    "dataType": "STRING",
+                    "colSeq": "8"
+                  },
+                  {
+                    "colName": "EFF_DT",
+                    "dataType": "String",
+                    "colSeq": "9"
+                  },
+                  {
+                    "colName": "GOVN_LAW_LGL_JRIS",
+                    "dataType": "STRING",
+                    "colSeq": "10"
+                  },
+                  {
+                    "colName": "GOVN_LAW_NM",
+                    "dataType": "STRING",
+                    "colSeq": "11"
+                  },
+                  {
+                    "colName": "AUTH_NETG_AGR_IND",
+                    "dataType": "STRING",
+                    "colSeq": "12"
+                  },
+                  {
+                    "colName": "CLO_OUT_NETG_IND",
+                    "dataType": "STRING",
+                    "colSeq": "13"
+                  },
+                  {
+                    "colName": "NETG_AGR_STA_DESC",
+                    "dataType": "STRING",
+                    "colSeq": "14"
+                  },
+                  {
+                    "colName": "NETG_AGR_CD",
+                    "dataType": "STRING",
+                    "colSeq": "15"
+                  },
+                  {
+                    "colName": "NETG_AGR_LNG_DESC",
+                    "dataType": "STRING",
+                    "colSeq": "16"
+                  },
+                  {
+                    "colName": "BAS_AGR_ID",
+                    "dataType": "STRING",
+                    "colSeq": "17"
+                  },
+                  {
+                    "colName": "NETG_AGR_FIRM_ACCT_MNEM",
+                    "dataType": "STRING",
+                    "colSeq": "18"
+                  },
+                  {
+                    "colName": "PRIM_PERS_NM",
+                    "dataType": "STRING",
+                    "colSeq": "19"
+                  },
+                  {
+                    "colName": "PRIM_ADDR_NM",
+                    "dataType": "STRING",
+                    "colSeq": "20"
+                  },
+                  {
+                    "colName": "PRIM_TEL_NO",
+                    "dataType": "STRING",
+                    "colSeq": "21"
+                  },
+                  {
+                    "colName": "PRIM_EMAIL_ADDR_NM",
+                    "dataType": "STRING",
+                    "colSeq": "22"
+                  }
+                ]
+              }
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "DATA_SOURCE",
+              "tskNm": "FILE_READ",
+              "paramNm": "out_data",
+              "paramVal": "INT_MODULE_NAME",
+              "name": "out_data",
+              "id": "out_data",
+              "parent": "FILE_READ"
+            }
+          ],
+          "logClltFlg": "Y",
+          "statClltFlg": "Y",
+          "cacheFlg": "N"
+        }
+      ],
+      "logClltFlg": "Y",
+      "statClltFlg": "Y",
+      "cacheFlg": "N"
+    },
+    {
+      "module": "MODULE_NAME",
+      "stgNm": "TRANSFORM",
+      "stgSeq": 1,
+      "stgDesc": "Enriching Data",
+      "name": "TRANSFORM",
+      "id": "TRANSFORM",
+      "parent": "MODULE_NAME",
+      "children": [
+        {
+          "module": "MODULE_NAME",
+          "stgNm": "TRANSFORM",
+          "taskNm": "TRANSFORM_TO_TARGET",
+          "taskDesc": "Transformations to target layout",
+          "taskSeq": 2,
+          "taskType": "REFORMAT",
+          "depdTask": "FILE_READ",
+          "name": "TRANSFORM_TO_TARGET",
+          "id": "TRANSFORM_TO_TARGET",
+          "parent": "TRANSFORM",
+          "children": [
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TRANSFORM",
+              "tskNm": "TRANSFORM_TO_TARGET",
+              "paramNm": "in_data",
+              "paramVal": "INT_MODULE_NAME",
+              "name": "in_data",
+              "id": "in_data",
+              "parent": "TRANSFORM_TO_TARGET"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TRANSFORM",
+              "tskNm": "TRANSFORM_TO_TARGET",
+              "paramNm": "out_data",
+              "paramVal": "MAP_OUT_MODULE_NAME",
+              "name": "out_data",
+              "id": "out_data",
+              "parent": "TRANSFORM_TO_TARGET"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TRANSFORM",
+              "tskNm": "TRANSFORM_TO_TARGET",
+              "paramNm": "transform",
+              "paramVal": "TRANSFORM_MODULE_NAME",
+              "name": "transform",
+              "id": "transform",
+              "parent": "TRANSFORM_TO_TARGET",
+              "transformationDetails": [
+                {
+                  "seq": 1,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "{RUN_ID}",
+                  "attrType": "ACTUAL",
+                  "outAttr": "RUN_ID"
+                },
+                {
+                  "seq": 2,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "{DATA_RECORD_SEQ}",
+                  "attrType": "ACTUAL",
+                  "outAttr": "DATA_RECORD_SEQ"
+                },
+                {
+                  "seq": 3,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "{CNTR_TYPE_ID}",
+                  "attrType": "ACTUAL",
+                  "outAttr": "CONTRACT_TYPE_ID"
+                },
+                {
+                  "seq": 4,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "{CNTR_SUB_TYPE_ID}",
+                  "attrType": "ACTUAL",
+                  "outAttr": "CONTRACT_SUB_TYPE_ID"
+                },
+                {
+                  "seq": 5,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "\u0027SYSTEM\u0027",
+                  "attrType": "ACTUAL",
+                  "outAttr": "UPDATE_BY"
+                },
+                {
+                  "seq": 6,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "current_timestamp()",
+                  "attrType": "ACTUAL",
+                  "outAttr": "UPDATE_AT"
+                },
+                {
+                  "seq": 7,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "to_timestamp(COB_DT, \u0027MMM dd yyyy\u0027)",
+                  "attrType": "ACTUAL",
+                  "outAttr": "TIMEMARK_KEY"
+                },
+                {
+                  "seq": 8,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_ID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "NETTING_AGREEMENT_ID"
+                },
+                {
+                  "seq": 9,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CITI_GFCID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "LEGAL_ENTITY_ID"
+                },
+                {
+                  "seq": 10,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CITI_LE_ID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "LEGAL_ENTITY_IDENTIFIER"
+                },
+                {
+                  "seq": 11,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CUST_GFCID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "PRIMARY_CUSTOMER_ID"
+                },
+                {
+                  "seq": 12,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CUST_LE_ID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "PRIM_CUST_LEGALENTITY_IDENTFR"
+                },
+                {
+                  "seq": 13,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "SCR_AGR_TYP_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "SECURITY_AGREEMENT_TYPE"
+                },
+                {
+                  "seq": 14,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "SCR_AGR_DESC",
+                  "attrType": "ACTUAL",
+                  "outAttr": "SECURITY_AGREEMENT_DESCRIPTION"
+                },
+                {
+                  "seq": 15,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "to_timestamp(EFF_DT, \u0027MMM dd yyyy\u0027)",
+                  "attrType": "ACTUAL",
+                  "outAttr": "EFFECTIVE_DATE"
+                },
+                {
+                  "seq": 16,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "GOVN_LAW_LGL_JRIS",
+                  "attrType": "ACTUAL",
+                  "outAttr": "GOVERNLAW_LEGAL_JURISDICTION"
+                },
+                {
+                  "seq": 17,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "GOVN_LAW_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "GOVERNING_LAW"
+                },
+                {
+                  "seq": 18,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "AUTH_NETG_AGR_IND",
+                  "attrType": "ACTUAL",
+                  "outAttr": "AUTHORIZED"
+                },
+                {
+                  "seq": 19,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CLO_OUT_NETG_IND",
+                  "attrType": "ACTUAL",
+                  "outAttr": "TWO_FULL_WAY"
+                },
+                {
+                  "seq": 20,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_STA_DESC",
+                  "attrType": "ACTUAL",
+                  "outAttr": "NETTING_AGRMT_STATUS_DESCR"
+                },
+                {
+                  "seq": 21,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_CD",
+                  "attrType": "ACTUAL",
+                  "outAttr": "NETTING_AGRMNT_CODE"
+                },
+                {
+                  "seq": 22,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_LNG_DESC",
+                  "attrType": "ACTUAL",
+                  "outAttr": "NETTING_AGRMNT_LONG_DESCR"
+                },
+                {
+                  "seq": 23,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "BAS_AGR_ID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "BASE_AGREEMENT_ID"
+                },
+                {
+                  "seq": 24,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_FIRM_ACCT_MNEM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "MNEMONIC"
+                },
+                {
+                  "seq": 25,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "PRIM_PERS_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "COUNTERPARTY_CONTACT_NAME"
+                },
+                {
+                  "seq": 26,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "PRIM_ADDR_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "COUNTERPARTY_CONTACT_ADDRESS"
+                },
+                {
+                  "seq": 27,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "PRIM_TEL_NO",
+                  "attrType": "ACTUAL",
+                  "outAttr": "COUNTERPARTY_CONTACT_PHONE"
+                },
+                {
+                  "seq": 28,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "PRIM_EMAIL_ADDR_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "COUNTERPARTY_EMAIL_ADDRESS"
+                }
+              ]
+            }
+          ],
+          "logClltFlg": "Y",
+          "statClltFlg": "Y",
+          "cacheFlg": "N"
+        }
+      ],
+      "logClltFlg": "Y",
+      "statClltFlg": "Y",
+      "cacheFlg": "N"
+    },
+    {
+      "module": "MODULE_NAME",
+      "stgNm": "TARGET_LOAD",
+      "stgSeq": 2,
+      "stgDesc": "Loading Data to Oracle Table RR_NETTING_AGREEMENT_CTRISK",
+      "name":  "TARGET_LOAD",
+      "id": "TARGET_LOAD",
+      "parent": "MODULE_NAME",
+      "children": [
+        {
+          "module": "MODULE_NAME",
+          "stgNm": "TARGET_LOAD",
+          "taskNm": "ORA_LOAD",
+          "taskDesc": "Loading Data to Oracle Table RR_NETTING_AGREEMENT_CTRISK",
+          "taskSeq": 3,
+          "taskType": "WRITE",
+          "depdTask": "TRANSFORM_TO_TARGET",
+          "name":  "ORA_LOAD",
+          "id": "ORA_LOAD",
+          "parent": "TARGET_LOAD",
+          "children": [
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "in_data",
+              "paramVal": "MAP_OUT_MODULE_NAME",
+              "name":  "in_data",
+              "id": "in_data",
+              "parent": "ORA_LOAD"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "post_sql1",
+              "name":  "post_sql1",
+              "id": "post_sql1",
+              "parent": "ORA_LOAD"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "pre_sql1",
+              "name":  "pre_sql1",
+              "id": "pre_sql1",
+              "parent": "ORA_LOAD"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "table",
+              "paramVal": "RR_NETTING_AGREEMENT_CTRISK",
+              "name":  "table",
+              "id": "table",
+              "parent": "ORA_LOAD"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "out_data",
+              "paramVal": "DSET.OUT_MODULE_NAME",
+              "name":  "out_data",
+              "id": "out_data",
+              "parent": "ORA_LOAD",
+              "derivedParams": {
+                "dsetNm": "DSET.OUT_MODULE_NAME",
+                "source": "Database",
+                "dsetDesc": "Write data to RR_NETTING_AGREEMENT_CTRISK Oracle Table",
+                "dsetFsType": "Database",
+                "dbConNm": "ORA_REG_META",
+                "dbType": "Oracle",
+                "tblNm": "RRANALYTIC.RR_NETTING_AGREEMENT_CTRISK",
+                "fileType": "Database",
+                "dbParallelRead": "5",
+                "saveMode": "Append",
+                "dbParams": {
+                  "dbType": "Oracle",
+                  "dbDriver": "oracle.jdbc.driver.OracleDriver",
+                  "dbServerName": "jdbc:oracle:thin:@oraasmwd17-scan.nam.nsroot.net:8889:RRAIDVG",
+                  "dbPort": "8889",
+                  "dbUserid": "REGINSIGHT_META",
+                  "dbPassword": "A4QlWgXXqslezzh/2ZZo7A\u003d\u003d"
+                }
+              }
+            }
+          ],
+          "logClltFlg": "Y",
+          "statClltFlg": "Y",
+          "cacheFlg": "N"
+        }
+      ],
+      "logClltFlg": "Y",
+      "statClltFlg": "Y",
+      "cacheFlg": "N"
+    }
+  ],
+  "processStages": [
+    {
+      "module": "MODULE_NAME",
+      "stgNm": "DATA_SOURCE",
+      "stgSeq": 0,
+      "stgDesc": "Read Data From Data Source",
+      "processTasks": [
+        {
+          "module": "MODULE_NAME",
+          "stgNm": "DATA_SOURCE",
+          "taskNm": "FILE_READ",
+          "taskDesc": "Read Data From Data Source",
+          "taskSeq": 1,
+          "taskType": "READ",
+          "processTaskParams": [
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "DATA_SOURCE",
+              "tskNm": "FILE_READ",
+              "paramNm": "in_data",
+              "paramVal": "DSET.IN_MODULE_NAME",
+              "derivedParams": {
+                "dsetNm": "DSET.IN_MODULE_NAME",
+                "source": "File",
+                "dsetDesc": "Read data from dat file and load it to Dataset",
+                "dsetFsType": "Local",
+                "dsetLoc": "/var/app/gftseap2/REG_DEV_1/sk34869/QFC/modified/STD_QFC_CITIRSK_NTNGAGR_D_20190813_20190814005802_61186488_CO.dat",
+                "dsetFnPattern": "STD_QFC_CITIRSK_NTNGAGR_D_*_CO.dat",
+                "dsetCpressFlg": "N",
+                "headerFlg": "Y",
+                "fileDelimit": "|",
+                "fileType": "Delimited",
+                "columns": [
+                  {
+                    "colName": "COB_DT",
+                    "dataType": "String",
+                    "colSeq": "1"
+                  },
+                  {
+                    "colName": "NETG_AGR_ID",
+                    "dataType": "STRING",
+                    "colSeq": "2"
+                  },
+                  {
+                    "colName": "CITI_GFCID",
+                    "dataType": "STRING",
+                    "colSeq": "3"
+                  },
+                  {
+                    "colName": "CITI_LE_ID",
+                    "dataType": "STRING",
+                    "colSeq": "4"
+                  },
+                  {
+                    "colName": "CUST_GFCID",
+                    "dataType": "STRING",
+                    "colSeq": "5"
+                  },
+                  {
+                    "colName": "CUST_LE_ID",
+                    "dataType": "STRING",
+                    "colSeq": "6"
+                  },
+                  {
+                    "colName": "SCR_AGR_TYP_NM",
+                    "dataType": "STRING",
+                    "colSeq": "7"
+                  },
+                  {
+                    "colName": "SCR_AGR_DESC",
+                    "dataType": "STRING",
+                    "colSeq": "8"
+                  },
+                  {
+                    "colName": "EFF_DT",
+                    "dataType": "String",
+                    "colSeq": "9"
+                  },
+                  {
+                    "colName": "GOVN_LAW_LGL_JRIS",
+                    "dataType": "STRING",
+                    "colSeq": "10"
+                  },
+                  {
+                    "colName": "GOVN_LAW_NM",
+                    "dataType": "STRING",
+                    "colSeq": "11"
+                  },
+                  {
+                    "colName": "AUTH_NETG_AGR_IND",
+                    "dataType": "STRING",
+                    "colSeq": "12"
+                  },
+                  {
+                    "colName": "CLO_OUT_NETG_IND",
+                    "dataType": "STRING",
+                    "colSeq": "13"
+                  },
+                  {
+                    "colName": "NETG_AGR_STA_DESC",
+                    "dataType": "STRING",
+                    "colSeq": "14"
+                  },
+                  {
+                    "colName": "NETG_AGR_CD",
+                    "dataType": "STRING",
+                    "colSeq": "15"
+                  },
+                  {
+                    "colName": "NETG_AGR_LNG_DESC",
+                    "dataType": "STRING",
+                    "colSeq": "16"
+                  },
+                  {
+                    "colName": "BAS_AGR_ID",
+                    "dataType": "STRING",
+                    "colSeq": "17"
+                  },
+                  {
+                    "colName": "NETG_AGR_FIRM_ACCT_MNEM",
+                    "dataType": "STRING",
+                    "colSeq": "18"
+                  },
+                  {
+                    "colName": "PRIM_PERS_NM",
+                    "dataType": "STRING",
+                    "colSeq": "19"
+                  },
+                  {
+                    "colName": "PRIM_ADDR_NM",
+                    "dataType": "STRING",
+                    "colSeq": "20"
+                  },
+                  {
+                    "colName": "PRIM_TEL_NO",
+                    "dataType": "STRING",
+                    "colSeq": "21"
+                  },
+                  {
+                    "colName": "PRIM_EMAIL_ADDR_NM",
+                    "dataType": "STRING",
+                    "colSeq": "22"
+                  }
+                ]
+              }
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "DATA_SOURCE",
+              "tskNm": "FILE_READ",
+              "paramNm": "out_data",
+              "paramVal": "INT_MODULE_NAME"
+            }
+          ],
+          "logClltFlg": "Y",
+          "statClltFlg": "Y",
+          "cacheFlg": "N"
+        }
+      ],
+      "logClltFlg": "Y",
+      "statClltFlg": "Y",
+      "cacheFlg": "N"
+    },
+    {
+      "module": "MODULE_NAME",
+      "stgNm": "TRANSFORM",
+      "stgSeq": 1,
+      "stgDesc": "Enriching Data",
+      "processTasks": [
+        {
+          "module": "MODULE_NAME",
+          "stgNm": "TRANSFORM",
+          "taskNm": "TRANSFORM_TO_TARGET",
+          "taskDesc": "Transformations to target layout",
+          "taskSeq": 2,
+          "taskType": "REFORMAT",
+          "depdTask": "FILE_READ",
+          "processTaskParams": [
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TRANSFORM",
+              "tskNm": "TRANSFORM_TO_TARGET",
+              "paramNm": "in_data",
+              "paramVal": "INT_MODULE_NAME"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TRANSFORM",
+              "tskNm": "TRANSFORM_TO_TARGET",
+              "paramNm": "out_data",
+              "paramVal": "MAP_OUT_MODULE_NAME"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TRANSFORM",
+              "tskNm": "TRANSFORM_TO_TARGET",
+              "paramNm": "transform",
+              "paramVal": "TRANSFORM_MODULE_NAME",
+              "transformationDetails": [
+                {
+                  "seq": 1,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "{RUN_ID}",
+                  "attrType": "ACTUAL",
+                  "outAttr": "RUN_ID"
+                },
+                {
+                  "seq": 2,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "{DATA_RECORD_SEQ}",
+                  "attrType": "ACTUAL",
+                  "outAttr": "DATA_RECORD_SEQ"
+                },
+                {
+                  "seq": 3,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "{CNTR_TYPE_ID}",
+                  "attrType": "ACTUAL",
+                  "outAttr": "CONTRACT_TYPE_ID"
+                },
+                {
+                  "seq": 4,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "{CNTR_SUB_TYPE_ID}",
+                  "attrType": "ACTUAL",
+                  "outAttr": "CONTRACT_SUB_TYPE_ID"
+                },
+                {
+                  "seq": 5,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "\u0027SYSTEM\u0027",
+                  "attrType": "ACTUAL",
+                  "outAttr": "UPDATE_BY"
+                },
+                {
+                  "seq": 6,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "current_timestamp()",
+                  "attrType": "ACTUAL",
+                  "outAttr": "UPDATE_AT"
+                },
+                {
+                  "seq": 7,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "to_timestamp(COB_DT, \u0027MMM dd yyyy\u0027)",
+                  "attrType": "ACTUAL",
+                  "outAttr": "TIMEMARK_KEY"
+                },
+                {
+                  "seq": 8,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_ID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "NETTING_AGREEMENT_ID"
+                },
+                {
+                  "seq": 9,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CITI_GFCID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "LEGAL_ENTITY_ID"
+                },
+                {
+                  "seq": 10,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CITI_LE_ID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "LEGAL_ENTITY_IDENTIFIER"
+                },
+                {
+                  "seq": 11,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CUST_GFCID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "PRIMARY_CUSTOMER_ID"
+                },
+                {
+                  "seq": 12,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CUST_LE_ID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "PRIM_CUST_LEGALENTITY_IDENTFR"
+                },
+                {
+                  "seq": 13,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "SCR_AGR_TYP_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "SECURITY_AGREEMENT_TYPE"
+                },
+                {
+                  "seq": 14,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "SCR_AGR_DESC",
+                  "attrType": "ACTUAL",
+                  "outAttr": "SECURITY_AGREEMENT_DESCRIPTION"
+                },
+                {
+                  "seq": 15,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "to_timestamp(EFF_DT, \u0027MMM dd yyyy\u0027)",
+                  "attrType": "ACTUAL",
+                  "outAttr": "EFFECTIVE_DATE"
+                },
+                {
+                  "seq": 16,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "GOVN_LAW_LGL_JRIS",
+                  "attrType": "ACTUAL",
+                  "outAttr": "GOVERNLAW_LEGAL_JURISDICTION"
+                },
+                {
+                  "seq": 17,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "GOVN_LAW_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "GOVERNING_LAW"
+                },
+                {
+                  "seq": 18,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "AUTH_NETG_AGR_IND",
+                  "attrType": "ACTUAL",
+                  "outAttr": "AUTHORIZED"
+                },
+                {
+                  "seq": 19,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "CLO_OUT_NETG_IND",
+                  "attrType": "ACTUAL",
+                  "outAttr": "TWO_FULL_WAY"
+                },
+                {
+                  "seq": 20,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_STA_DESC",
+                  "attrType": "ACTUAL",
+                  "outAttr": "NETTING_AGRMT_STATUS_DESCR"
+                },
+                {
+                  "seq": 21,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_CD",
+                  "attrType": "ACTUAL",
+                  "outAttr": "NETTING_AGRMNT_CODE"
+                },
+                {
+                  "seq": 22,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_LNG_DESC",
+                  "attrType": "ACTUAL",
+                  "outAttr": "NETTING_AGRMNT_LONG_DESCR"
+                },
+                {
+                  "seq": 23,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "BAS_AGR_ID",
+                  "attrType": "ACTUAL",
+                  "outAttr": "BASE_AGREEMENT_ID"
+                },
+                {
+                  "seq": 24,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "NETG_AGR_FIRM_ACCT_MNEM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "MNEMONIC"
+                },
+                {
+                  "seq": 25,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "PRIM_PERS_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "COUNTERPARTY_CONTACT_NAME"
+                },
+                {
+                  "seq": 26,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "PRIM_ADDR_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "COUNTERPARTY_CONTACT_ADDRESS"
+                },
+                {
+                  "seq": 27,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "PRIM_TEL_NO",
+                  "attrType": "ACTUAL",
+                  "outAttr": "COUNTERPARTY_CONTACT_PHONE"
+                },
+                {
+                  "seq": 28,
+                  "tfmNm": "TRANSFORM_MODULE_NAME",
+                  "attrExpression": "PRIM_EMAIL_ADDR_NM",
+                  "attrType": "ACTUAL",
+                  "outAttr": "COUNTERPARTY_EMAIL_ADDRESS"
+                }
+              ]
+            }
+          ],
+          "logClltFlg": "Y",
+          "statClltFlg": "Y",
+          "cacheFlg": "N"
+        }
+      ],
+      "logClltFlg": "Y",
+      "statClltFlg": "Y",
+      "cacheFlg": "N"
+    },
+    {
+      "module": "MODULE_NAME",
+      "stgNm": "TARGET_LOAD",
+      "stgSeq": 2,
+      "stgDesc": "Loading Data to Oracle Table RR_NETTING_AGREEMENT_CTRISK",
+      "processTasks": [
+        {
+          "module": "MODULE_NAME",
+          "stgNm": "TARGET_LOAD",
+          "taskNm": "ORA_LOAD",
+          "taskDesc": "Loading Data to Oracle Table RR_NETTING_AGREEMENT_CTRISK",
+          "taskSeq": 3,
+          "taskType": "WRITE",
+          "depdTask": "TRANSFORM_TO_TARGET",
+          "processTaskParams": [
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "in_data",
+              "paramVal": "MAP_OUT_MODULE_NAME"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "post_sql1"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "pre_sql1"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "table",
+              "paramVal": "RR_NETTING_AGREEMENT_CTRISK"
+            },
+            {
+              "module": "MODULE_NAME",
+              "stgNm": "TARGET_LOAD",
+              "tskNm": "ORA_LOAD",
+              "paramNm": "out_data",
+              "paramVal": "DSET.OUT_MODULE_NAME",
+              "derivedParams": {
+                "dsetNm": "DSET.OUT_MODULE_NAME",
+                "source": "Database",
+                "dsetDesc": "Write data to RR_NETTING_AGREEMENT_CTRISK Oracle Table",
+                "dsetFsType": "Database",
+                "dbConNm": "ORA_REG_META",
+                "dbType": "Oracle",
+                "tblNm": "RRANALYTIC.RR_NETTING_AGREEMENT_CTRISK",
+                "fileType": "Database",
+                "dbParallelRead": "5",
+                "saveMode": "Append",
+                "dbParams": {
+                  "dbType": "Oracle",
+                  "dbDriver": "oracle.jdbc.driver.OracleDriver",
+                  "dbServerName": "jdbc:oracle:thin:@oraasmwd17-scan.nam.nsroot.net:8889:RRAIDVG",
+                  "dbPort": "8889",
+                  "dbUserid": "REGINSIGHT_META",
+                  "dbPassword": "A4QlWgXXqslezzh/2ZZo7A\u003d\u003d"
+                }
+              }
+            }
+          ],
+          "logClltFlg": "Y",
+          "statClltFlg": "Y",
+          "cacheFlg": "N"
+        }
+      ],
+      "logClltFlg": "Y",
+      "statClltFlg": "Y",
+      "cacheFlg": "N"
+    }
+  ]
+}
